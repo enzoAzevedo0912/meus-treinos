@@ -1,0 +1,223 @@
+:root {
+    --primary: #d90429;
+    --dark: #0f172a;
+    --light-bg: #f8fafc;
+    --card-bg: #ffffff;
+    --accent: #0284c7;
+    --text-dark: #334155;
+    --gray-border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--dark), #1e293b);
+    color: white;
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.header-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.header-container p {
+    color: #94a3b8;
+    font-size: 1rem;
+}
+
+.user-stats {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navegação */
+.days-nav {
+    display: flex;
+    justify-content: center;
+    background: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.day-btn {
+    background: none;
+    border: none;
+    padding: 1rem 1.4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.day-btn:hover, 
+.day-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background-color: #f1f5f9;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.day-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.day-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(8px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--dark);
+    margin-bottom: 1.2rem;
+    border-left: 5px solid var(--primary);
+    padding-left: 0.8rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-border);
+}
+
+.card h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--light-bg);
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.diet-list li {
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px dashed var(--gray-border);
+}
+
+.diet-list li:last-child {
+    border-bottom: none;
+}
+
+.diet-list strong {
+    color: var(--dark);
+    display: block;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.workout-list li {
+    background: var(--light-bg);
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--gray-border);
+}
+
+/* Badges */
+.tag {
+    color: white;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: var(--accent);
+}
+
+.tag-cardio {
+    background-color: var(--primary);
+}
+
+.tag-optional {
+    background-color: #64748b;
+}
+
+.cardio-box {
+    margin-top: 1.2rem;
+    background: #f0f9ff;
+    padding: 0.9rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--dark);
+    color: white;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
